@@ -88,8 +88,16 @@ dataFetcher()
   });
 
 function displayData(allProductsData) {
+  console.log(allProductsData);
   const alldata = allProductsData.map((item) => {
-    return `<h2>${item.title}</h2> <img src="${item.images[0]}"/>`;
+    return `
+    <img src="${item.images[0]}" alt="image" />
+        <h2>${item.title}</h2>
+        <p>${item.description}</p>
+        <h4>${item.brand}</h4>
+        <h3>${"$" + item.price}</h3>
+        <h5>${item.category}</h5>
+    `;
   });
 
   card.innerHTML = alldata;
