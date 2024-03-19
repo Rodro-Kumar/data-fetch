@@ -29,16 +29,11 @@ img {
   margin: 0 auto;
 }
 
-.main {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100vh;
-}
-
 .card {
+  width: 378px;
+  display: flex;
+  flex-direction: column;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  max-width: 375px;
   background: #fff;
   padding: 24px 24px;
   border-radius: 25px;
@@ -48,7 +43,7 @@ img {
   -o-border-radius: 25px;
 }
 
-.productimg {
+/* .productimg {
   border-radius: 25px;
   -webkit-border-radius: 25px;
   -moz-border-radius: 25px;
@@ -110,4 +105,4 @@ p {
   font-size: 17px;
   font-weight: 700;
   color: #2e2e2e;
-}
+} */
