@@ -57,11 +57,12 @@
 //   console.log(returnData.products);
 // });
 
-const productName = document.getElementById("productName");
-const productdescription = document.querySelector(".productdescription");
-const produtPrice = document.querySelector(".produtPrice");
-const productimg = document.querySelector(".productimg");
-const brand = document.querySelector(".brand");
+// const productName = document.querySelector(".productName");
+// const productdescription = document.querySelector(".productdescription");
+// const produtPrice = document.querySelector(".produtPrice");
+// const productimg = document.querySelector(".productimg");
+// const brand = document.querySelector(".brand");
+
 const card = document.querySelector(".card");
 
 function dataFetcher() {
@@ -83,15 +84,13 @@ dataFetcher()
     return reData.products;
   })
   .then((allProducts) => {
-    let product = allProducts;
-
-    return product;
-  })
-  .then((data) => {
-    let allData = data[0];
-    productName.innerHTML = allData.title;
-    productdescription.innerHTML = allData.description;
-    produtPrice.innerHTML = allData.price + " $";
-    brand.innerHTML = allData.brand;
-    productimg.src = allData.images[0];
+    displayData(allProducts);
   });
+
+function displayData(allProductsData) {
+  const alldata = allProductsData.map((item) => {
+    return `<h2>${item.title}</h2> <img src="${item.images[0]}"/>`;
+  });
+
+  card.innerHTML = alldata;
+}
