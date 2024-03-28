@@ -81,7 +81,7 @@ function display(data) {
 
 dataFetcher()
   .then((reData) => {
-    return reData.products;
+    return reData.products.slice(4, 12);
   })
   .then((allProducts) => {
     displayData(allProducts);
